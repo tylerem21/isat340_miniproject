@@ -3,29 +3,35 @@
         <title>Flask App - Celebrities</title>
         <link type="text/css" rel="stylesheet" href="static/celebs_stylesheet.css"/>
     </head>
+<form action="" method="post">
         <body>
-            <table border=5 style="width:100%;">
+            <table border=5>
                 <tr>
                     <td>Photo</td> <td><img height="256" width="256" src="{{photo}}"/></td>
                 </tr>
                 <tr>
-                    <td>Celebrity ID</td> <td><input type="text" name="celebID" value="{{celebID}}" readonly/></td>
+                    <td>Celebrity ID</td> <td>{{celebID}}</td>
                 </tr>
                 <tr>
-                    <td>First Name</td> <td><input type="text" name="firstname" value="{{firstname}}"/></td>
+                    <td>First Name</td> <td>{{firstname}}</td>
                 </tr>
                 <tr>
-                    <td>Last Name</td> <td><input type="text" name="lastname" value="{{lastname}}"/></td>
+                    <td>Last Name</td> <td>{{lastname}}</td>
                 </tr>
                 <tr>
-                    <td>Age</td> <td><input type="text" name="age" value="{{age}}"/></td>
+                    <td>Age</td> <td>{{age}}</td>
                 </tr>
                 <tr>
-                    <td>Email</td> <td><input type="text" name="email" value="{{email}}"/></td>
+                    <td>Email</td> <td>{{email}}</td>
                 </tr>
                 <tr>
-                    <td>Bio</td> <td><input type="text" name="bio" value="{{bio}}"/></td>
+                    <td>Bio</td> <td>{{bio}}</td>
+                </tr>
+                <tr>
+                    <td><input type="number" name="celebID" min="1" max="8"/></td>
+                    <td colspan=2><input type="submit" value="Click To Update"></td>
                 </tr>
             </table>
         </body>
+</form>
 </html>

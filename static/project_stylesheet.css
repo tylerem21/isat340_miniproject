@@ -1,0 +1,23 @@
+/**************************************************
+*Description: Primary style sheet for Login.htm
+*Erica Wilder and Ethan Tyler
+***************************************************/
+/*Adjust BODY style*/
+body{
+  background-color:#FFFF99;
+}
+
+/*Adjust heading style*/
+h1{
+	color: blue;
+	font-family: courier new;
+  text-align:center;
+	}
+
+input{
+  color: blue;
+}
+
+form{
+  text-align: center;
+}
