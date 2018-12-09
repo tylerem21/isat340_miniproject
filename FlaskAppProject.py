@@ -116,7 +116,7 @@ def view_all():
     return render_template('view_all_celebs.htm',
 rows=rows)
 
-@app.route('/view_one_celeb')
+@app.route('/view_one_celeb', methods=['GET','POST'])
 def view():
     celebID = None
     firstname = ''
@@ -126,20 +126,38 @@ def view():
     photo = ''
     bio = ''
 
-    conn = sqlite3.connect('celebrities.db')
-    c = conn.cursor()
-    #Modify WHERE clause to specify celebrity
-    c.execute('''SELECT * FROM celebs WHERE celebID=1''')
-    row = c.fetchone()
-    if row:
-        celebID = row[0]
-        firstname = row[1]
-        lastname = row[2]
-        age = row[3]
-        email = row[4]
-        photo = row[5]
-        bio = row[6]
-    conn.close()
+    #this is called when the page is FIRST LOADED
+    if request.method == 'GET':
+        conn = sqlite3.connect('celebrities.db')
+        c = conn.cursor()
+        #Modify WHERE clause to specify celebrity
+        c.execute('''SELECT * FROM celebs WHERE celebID=1''')
+        row = c.fetchone()
+        if row:
+            celebID = row[0]
+            firstname = row[1]
+            lastname = row[2]
+            age = row[3]
+            email = row[4]
+            photo = row[5]
+            bio = row[6]
+        conn.close()
+    if request.method == 'POST':
+        celebID = request.form['celebID']
+        conn = sqlite3.connect('celebrities.db')
+        c = conn.cursor()
+        #Modify WHERE clause to specify celebrity
+        c.execute('''SELECT * FROM celebs WHERE celebID=?''',(celebID))
+        row = c.fetchone()
+        if row:
+            celebID = row[0]
+            firstname = row[1]
+            lastname = row[2]
+            age = row[3]
+            email = row[4]
+            photo = row[5]
+            bio = row[6]
+        conn.close()
     #return
     return render_template('view_one_celeb.htm', celebID=celebID, firstname=firstname, lastname=lastname, age=age, email=email, photo=photo, bio=bio)
 
