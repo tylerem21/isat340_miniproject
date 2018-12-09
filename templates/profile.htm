@@ -1,0 +1,94 @@
+<!DOCTYPE html/>
+
+<html>
+
+<head>
+
+<title> Profile Information </title>
+
+</head>
+
+<body style="background-color:#CEF6F5;">
+
+</h1>
+
+
+<form action="" method="post">
+	<fieldset>
+
+		<legend> Profile Information:</legend>
+		<br>
+		Please <b>update</b> your profile information on the following form
+		<br>
+		<i> All fields are required and must contain valid information </i>
+		<br><br>
+		<Table border=2>
+
+		<tr>
+			<td>Member ID:</td>
+			<td>
+			<input type="text" name="memberID" value="{{memberID}}" readonly/>
+			</td>
+		</tr>
+
+		<tr>
+			<td>First name:</td>
+			<td>
+			<input type="text" name="firstname" value="{{firstname}}" />
+			</td>
+		</tr>
+
+		<tr>
+			<td>Last name:</td>
+			<td>
+			<input type="text" name="lastname" value="{{lastname}}" />
+			</td>
+		</tr>
+
+		<tr>
+			<td>Age:</td>
+			<td>
+			<input type="text" name="age" value="{{age}}" />
+			</td>
+		</tr>
+
+		<tr>
+			<td>Email:</td>
+			<td>
+			<input type="text" name="email" value="{{email}}" />
+			<em>&emsp;&emsp;e.g. user@domain.com</em>
+			</td>
+		</tr>
+
+		<tr>
+			<td><img src="{{photo}}" width="110" height="130"></td>
+			<td>
+			<textarea name="bio" rows=4 cols=50>{{bio}}</textarea>
+			</td>
+		</tr>
+
+		<tr>
+			<td colspan=2>
+			<input type="submit" value="Click To Update">
+			</td>
+		</tr>
+            
+        {% if success %}
+            <h3 style="color:magenta;">Data successfully submitted to the database!</h3>
+        {% endif %}
+
+		</Table>
+
+		<br>
+		<br>
+<a href="/view_all_celebs">Click to view all of the celebrities</a>
+
+		<br>
+		<br>
+<a href="/view_one_celeb">Click to view one of the celebrities</a>        
+</form>
+
+
+</body>
+
+</html>

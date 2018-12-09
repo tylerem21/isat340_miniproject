@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Flask App - Celebrities</title>
+        <link type="text/css" rel="stylesheet" href="static/celebs_stylesheet.css"/>
+    </head>
+        <body>
+            <table border=5 style="width:100%;">
+                <tr>
+                    <td>Photo</td> <td><img height="256" width="256" src="{{photo}}"/></td>
+                </tr>
+                <tr>
+                    <td>Celebrity ID</td> <td><input type="text" name="celebID" value="{{celebID}}" readonly/></td>
+                </tr>
+                <tr>
+                    <td>First Name</td> <td><input type="text" name="firstname" value="{{firstname}}"/></td>
+                </tr>
+                <tr>
+                    <td>Last Name</td> <td><input type="text" name="lastname" value="{{lastname}}"/></td>
+                </tr>
+                <tr>
+                    <td>Age</td> <td><input type="text" name="age" value="{{age}}"/></td>
+                </tr>
+                <tr>
+                    <td>Email</td> <td><input type="text" name="email" value="{{email}}"/></td>
+                </tr>
+                <tr>
+                    <td>Bio</td> <td><input type="text" name="bio" value="{{bio}}"/></td>
+                </tr>
+            </table>
+        </body>
+</html>
