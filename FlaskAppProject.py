@@ -23,13 +23,15 @@ def login():
         c.execute('''SELECT * FROM members WHERE username = ? AND password = ?''', (un, pw))
         row = c.fetchone()
         #print(row)
-        mem = row[0]
-        #print(mem)
-        #validate user/pass
-        if un != row[7] or pw != row[8]:
-            error = 'Invalid Credentials. Please try again.'
+        if row:
+            mem = row[0]
+            #validate user/pass
+            if un != row[7] or pw != row[8]:
+                error = ' Invalid Credentials. Please try again.'
+            else:
+                return redirect(url_for('info', mem=mem))
         else:
-            return redirect(url_for('info', mem=mem))
+            error = ' Invalid Credentials. Please try again.'
         #if request.form['username'] != un or request.form['password'] != pw:
         #    error = 'Invalid Credentials. Please try again.'
         #else:
